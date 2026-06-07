@@ -22,7 +22,8 @@ jobs:
         run: |
           pip install pandas numpy scikit-learn mlflow
 
-      - name: Run Training
+      - name: Run MLflow Project
         run: |
-          cd MLProject
-          python modelling.py
+          cd Membangun_Model
+          export MLFLOW_ALLOW_FILE_STORE=true
+          mlflow run . --env-manager local
