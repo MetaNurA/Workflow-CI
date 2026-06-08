@@ -21,9 +21,13 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install pandas numpy scikit-learn mlflow
+          
+      - name: Check Structure
+        run: |
+          pwd
+          ls -R
 
       - name: Run MLflow Project
         run: |
-          cd Membangun_Model
-          export MLFLOW_ALLOW_FILE_STORE=true
+          cd MLProject
           mlflow run . --env-manager local
